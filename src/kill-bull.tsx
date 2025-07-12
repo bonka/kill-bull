@@ -240,6 +240,14 @@ export default async function Command(props: LaunchProps<{ arguments: Arguments 
 
         // Handle code blocks specially
         if (preferences.killCode) {
+          // Check for inline code block (```code goes here```)
+          const inlineCodeMatch = line.match(/^(\s*)```(.+?)```(.*)$/);
+          if (inlineCodeMatch) {
+            killed++;
+            if (!killedTypes.includes("code")) killedTypes.push("code");
+            return inlineCodeMatch[1] + inlineCodeMatch[2] + inlineCodeMatch[3];
+          }
+          
           // Check if line starts with three backticks
           if (line.trim().startsWith("```")) {
             // Remove all three backticks

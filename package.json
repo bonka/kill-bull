@@ -1,0 +1,127 @@
+{
+  "name": "kill-bull",
+  "title": "Slashes Bullets and Formatting",
+  "description": "Exterminate bullet points and structural markdown with razor precision.",
+  "icon": "kill-bull-icon.png",
+  "author": "bonka",
+  "categories": [
+    "Productivity"
+  ],
+  "license": "MIT",
+  "type": "module",
+  "version": "1.1.1",
+  "commands": [
+    {
+      "name": "kill-bull",
+      "title": "Kill Bull",
+      "description":"Stealthily assassinates rogue bullet points, decimates white space and upends power trip of rising digits and letters.\n\nCustomizable to spare symbols you deem worthy or expand the carnage to an all out hierarchical slicing spree.",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "mode",
+          "placeholder": "shortcode (a,l,h,q,c,r,i)",
+          "type": "text",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "spareBullets",
+      "type": "checkbox",
+      "required": false,
+      "title": "Have mercy on…",
+      "description": "Have mercy on the humble bullet points (•, -, *)",
+      "default": false,
+      "label": "Bullets"
+    },
+    {
+      "name": "spareNumbers",
+      "type": "checkbox",
+      "required": false,
+      "title": "",
+      "description": "Grant passage to the numeric order (1. 2. 3.)",
+      "default": false,
+      "label": "Numbers"
+    },
+    {
+      "name": "spareLetters",
+      "type": "checkbox",
+      "required": false,
+      "title": "",
+      "description": "Show clemency to alphabetic procession (a, b, c)",
+      "default": false,
+      "label": "Letters"
+    },
+    {
+      "name": "killHeaders",
+      "type": "checkbox",
+      "required": false,
+      "title": "Also target…",
+      "description": "Slice markdown headers (#, ##, ###) with prejudice",
+      "default": false,
+      "label": "Headers"
+    },
+    {
+      "name": "killQuotes",
+      "type": "checkbox",
+      "required": false,
+      "title": "",
+      "description": "Target snarky blockquotes (>) for termination",
+      "default": false,
+      "label": "Blockquotes"
+    },
+    {
+      "name": "killCode",
+      "type": "checkbox",
+      "required": false,
+      "title": "",
+      "description": "Obliterate code blocks (```)",
+      "default": false,
+      "label": "Code"
+    },
+    {
+      "name": "killRules",
+      "type": "checkbox",
+      "required": false,
+      "title": "",
+      "description": "Chop horizontal rules (---, ***) into pieces",
+      "default": false,
+      "label": "Rules"
+    },
+    {
+      "name": "killIndentation",
+      "type": "checkbox",
+      "required": false,
+      "title": "",
+      "description": "Destroy hierarchical tabulation",
+      "default": false,
+      "label": "Indentation"
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.83.1"
+  },
+  "devDependencies": {
+    "@eslint/config-array": "^0.18.0",
+    "@eslint/object-schema": "^2.1.4",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.33.0",
+    "@typescript-eslint/parser": "^8.33.0",
+    "eslint": "^9.9.0",
+    "glob": "^11.0.0",
+    "prettier": "^3.3.0",
+    "rimraf": "^6.0.0",
+    "typescript": "^5.5.0"
+  },
+  "scripts": {
+    "build": "ray build -e dist",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "publish": "npx @raycast/api@latest publish",
+    "clean": "rimraf dist"
+  }
+}
